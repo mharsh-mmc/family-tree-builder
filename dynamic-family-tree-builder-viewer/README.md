@@ -1,61 +1,264 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🌳 Dynamic Family Tree Builder & Viewer
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern, interactive Family Tree Builder & Viewer application built with Laravel 12, Vue.js, and VueFlow. Users can drag-and-drop nodes (family members), connect them visually, and have the system automatically generate three additional relationship-sorted formats — Vertical, Horizontal, and Circular — in addition to the custom user-drawn tree.
 
-## About Laravel
+## ✨ Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🎨 Interactive Family Tree Builder
+- **Full-screen Canvas**: Drag-and-drop interface for building family trees
+- **Visual Node Creation**: Add family members with profile pictures and details
+- **Relationship Connections**: Connect nodes to establish family relationships
+- **Real-time Updates**: Immediate visual feedback as you build
+- **Undo/Redo System**: Complete history management for all changes
+- **Auto-save**: Automatic saving of tree changes
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 👥 Family Member Management
+- **Comprehensive Profiles**: Name, relation, profile picture, date of birth, alive status
+- **Profile Pictures**: Upload and manage profile images with Laravel Filesystem
+- **Flexible Relations**: Full kinship list including step-family and in-law relationships
+- **Biodata Support**: Additional information fields for each family member
+- **Life Status Tracking**: Track living and deceased family members
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🔄 Multiple Layout Formats
+- **Custom Layout**: User's original drag-and-drop arrangement
+- **Vertical Layout**: Hierarchical top-down family tree view
+- **Horizontal Layout**: Left-to-right family tree representation
+- **Circular Layout**: Radial family tree visualization
+- **Instant Switching**: Seamless format changes without page reload
 
-## Learning Laravel
+### 🌐 Public Family Tree Viewer
+- **Read-only Mode**: Share family trees publicly
+- **Profile Modals**: Detailed family member information on click
+- **Zoom Controls**: Zoom in/out and fit-to-view functionality
+- **Share Links**: Easy sharing of family tree URLs
+- **Responsive Design**: Mobile-friendly interface
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🛡️ Security & Authentication
+- **Laravel Jetstream**: Complete authentication system
+- **User Isolation**: Each user's family trees are private
+- **Route Protection**: Secure API endpoints with middleware
+- **File Upload Security**: Validated image uploads
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Tech Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Backend
+- **Laravel 12** - Modern PHP framework
+- **MySQL/SQLite** - Database (configurable)
+- **Laravel Filesystem** - Profile picture storage
+- **Laravel Jetstream** - Authentication & user management
 
-## Laravel Sponsors
+### Frontend
+- **Vue.js 3** - Progressive JavaScript framework
+- **Inertia.js** - Seamless SPA experience
+- **VueFlow** - Interactive node-based diagrams
+- **Tailwind CSS** - Utility-first CSS framework
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Development Tools
+- **Vite** - Fast build tool
+- **PHP 8.1+** - Modern PHP features
+- **Composer** - PHP dependency management
+- **npm** - JavaScript package management
 
-### Premium Partners
+## 📋 Requirements
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- PHP 8.1 or higher
+- Composer
+- Node.js 16+ and npm
+- MySQL 8.0+ or SQLite 3
+- Web server (Apache/Nginx) or PHP built-in server
 
-## Contributing
+## 🛠️ Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd dynamic-family-tree-builder-viewer
+```
 
-## Code of Conduct
+### 2. Install PHP Dependencies
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 3. Install JavaScript Dependencies
+```bash
+npm install
+```
 
-## Security Vulnerabilities
+### 4. Environment Configuration
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Configure your database in `.env`:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=family_tree_db
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
 
-## License
+### 5. Database Setup
+```bash
+php artisan migrate
+php artisan storage:link
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Build Frontend Assets
+```bash
+npm run build
+```
+
+### 7. Start Development Server
+```bash
+php artisan serve
+```
+
+Visit `http://localhost:8000` to access the application.
+
+## 🗄️ Database Schema
+
+### Family Tree Nodes
+```sql
+family_tree_nodes:
+- id (primary key)
+- user_id (foreign key to users)
+- name (string)
+- relation (string)
+- profile_pic (string, nullable)
+- dob (date, nullable)
+- is_alive (boolean, default: true)
+- dod (date, nullable)
+- biodata (text, nullable)
+- position_x (decimal)
+- position_y (decimal)
+- timestamps
+```
+
+### Family Tree Edges
+```sql
+family_tree_edges:
+- id (primary key)
+- source_node_id (foreign key to family_tree_nodes)
+- target_node_id (foreign key to family_tree_nodes)
+- relation_type (string)
+- timestamps
+```
+
+## 🛣️ API Endpoints
+
+### Web Routes (Protected)
+- `GET /family-tree` - Interactive builder interface
+- `POST /family-tree/node` - Create new family member
+- `GET /family-tree/node/{id}` - Get family member details
+- `PATCH /family-tree/node/{id}` - Update family member
+- `DELETE /family-tree/node/{id}` - Delete family member
+- `POST /family-tree/edges` - Create relationship connection
+- `DELETE /family-tree/edges/{edge}` - Delete relationship
+
+### Public Routes
+- `GET /family-tree/viewer/{userId}` - Public family tree viewer
+
+### API Routes
+- `GET /api/family-tree/formats/{userId}` - Get all tree layout formats (JSON)
+
+## 🎯 Usage Guide
+
+### Creating Your First Family Tree
+
+1. **Register/Login**: Create an account or sign in
+2. **Access Builder**: Navigate to `/family-tree`
+3. **Add Family Members**: Use the "Add Person" button to create nodes
+4. **Connect Relationships**: Use "Connect Nodes" to establish family connections
+5. **Customize Layout**: Drag nodes to position them as desired
+6. **Save Changes**: Changes are automatically saved
+
+### Managing Family Members
+
+- **Edit Profiles**: Click on any node to edit its properties
+- **Upload Photos**: Add profile pictures for family members
+- **Update Information**: Modify names, relations, dates, and biodata
+- **Delete Members**: Remove family members (with confirmation)
+
+### Viewing Different Layouts
+
+- **Custom**: Your original arrangement
+- **Vertical**: Hierarchical top-down view
+- **Horizontal**: Left-to-right family tree
+- **Circular**: Radial visualization
+
+### Sharing Your Family Tree
+
+- **Public Viewer**: Share the viewer URL with family and friends
+- **Profile Details**: Click on nodes to view detailed information
+- **Zoom Controls**: Navigate large family trees easily
+
+## 🔧 Customization
+
+### Adding New Relationship Types
+Edit `resources/js/Components/FamilyTree/NodeForm.vue` to add new relation options.
+
+### Modifying Layout Algorithms
+Customize the `TreeFormatterService` to adjust how automatic layouts are generated.
+
+### Styling Changes
+Modify Tailwind CSS classes in Vue components or add custom CSS.
+
+## 🚀 Deployment
+
+### Production Environment
+1. Set `APP_ENV=production` in `.env`
+2. Configure production database
+3. Run `npm run build` for production assets
+4. Set up web server (Apache/Nginx)
+5. Configure file storage for profile pictures
+
+### Docker Deployment
+```bash
+docker-compose up -d
+```
+
+## 🧪 Testing
+
+### Run Tests
+```bash
+php artisan test
+```
+
+### Frontend Testing
+```bash
+npm run test
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE).
+
+## 🙏 Acknowledgments
+
+- **Laravel Team** - For the amazing PHP framework
+- **Vue.js Team** - For the progressive JavaScript framework
+- **VueFlow Team** - For the interactive diagram library
+- **Tailwind CSS** - For the utility-first CSS framework
+
+## 📞 Support
+
+For support and questions:
+- Create an issue in the repository
+- Check the documentation
+- Review the code examples
+
+---
+
+**Built with ❤️ using modern web technologies**
