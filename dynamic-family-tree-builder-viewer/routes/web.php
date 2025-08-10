@@ -31,7 +31,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Family Tree Routes
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'security.headers', 'request.validation'])->group(function () {
     Route::get('/family-tree', [FamilyTreeController::class, 'index'])->name('family-tree.index');
     Route::post('/family-tree/node', [FamilyTreeController::class, 'store'])->name('family-tree.store');
     Route::get('/family-tree/node/{id}', [FamilyTreeController::class, 'show'])->name('family-tree.show');

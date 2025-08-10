@@ -17,7 +17,12 @@ return Application::configure(basePath: dirname(__DIR__))
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
         ]);
 
-        //
+        // Register security middleware aliases
+        $middleware->alias([
+            'security.headers' => \App\Http\Middleware\SecurityHeadersMiddleware::class,
+            'request.validation' => \App\Http\Middleware\RequestValidationMiddleware::class,
+            'rate.limiting' => \App\Http\Middleware\RateLimitingMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

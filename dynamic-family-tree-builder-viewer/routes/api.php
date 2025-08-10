@@ -9,4 +9,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 // Family Tree API Routes
-Route::get('/family-tree/formats/{userId}', [FamilyTreeController::class, 'getFormats'])->name('api.family-tree.formats');
+Route::middleware(['security.headers', 'request.validation', 'rate.limiting'])->group(function () {
+    Route::get('/family-tree/formats/{userId}', [FamilyTreeController::class, 'getFormats'])->name('api.family-tree.formats');
+});
