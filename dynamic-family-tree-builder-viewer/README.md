@@ -43,7 +43,7 @@ A modern, interactive Family Tree Builder & Viewer application built with Larave
 
 ### Backend
 - **Laravel 12** - Modern PHP framework
-- **MySQL/SQLite** - Database (configurable)
+- **MySQL** - Database (latest version)
 - **Laravel Filesystem** - Profile picture storage
 - **Laravel Jetstream** - Authentication & user management
 
@@ -64,7 +64,7 @@ A modern, interactive Family Tree Builder & Viewer application built with Larave
 - PHP 8.1 or higher
 - Composer
 - Node.js 16+ and npm
-- MySQL 8.0+ or SQLite 3
+- MySQL 8.0+
 - Web server (Apache/Nginx) or PHP built-in server
 
 ## 🛠️ Installation
@@ -210,55 +210,4 @@ Modify Tailwind CSS classes in Vue components or add custom CSS.
 ## 🚀 Deployment
 
 ### Production Environment
-1. Set `APP_ENV=production` in `.env`
-2. Configure production database
-3. Run `npm run build` for production assets
-4. Set up web server (Apache/Nginx)
-5. Configure file storage for profile pictures
-
-### Docker Deployment
-```bash
-docker-compose up -d
-```
-
-## 🧪 Testing
-
-### Run Tests
-```bash
-php artisan test
-```
-
-### Frontend Testing
-```bash
-npm run test
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is open-sourced software licensed under the [MIT license](LICENSE).
-
-## 🙏 Acknowledgments
-
-- **Laravel Team** - For the amazing PHP framework
-- **Vue.js Team** - For the progressive JavaScript framework
-- **VueFlow Team** - For the interactive diagram library
-- **Tailwind CSS** - For the utility-first CSS framework
-
-## 📞 Support
-
-For support and questions:
-- Create an issue in the repository
-- Check the documentation
-- Review the code examples
-
----
-
-**Built with ❤️ using modern web technologies**
+1. Set `APP_ENV=production`
